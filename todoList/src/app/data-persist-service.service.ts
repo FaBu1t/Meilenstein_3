@@ -41,6 +41,11 @@ export class DataPersistServiceService {
     this.persist();
   }
 
+  removeAll(){
+    localStorage.clear();
+    this.tasks = []; // Alternative: window.location.realod();
+  }
+
   persist(){
     localStorage.setItem('tasks',JSON.stringify(this.tasks));
   }

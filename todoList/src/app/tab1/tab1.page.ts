@@ -47,7 +47,7 @@ export class Tab1Page {
           role: 'cancel',
           cssClass: 'secondary'
         }, {
-          text: 'JA, BITTE!',
+          text: 'Einverstanden',
           handler: () => {
             this.dataService.removeTask(task);
           }
