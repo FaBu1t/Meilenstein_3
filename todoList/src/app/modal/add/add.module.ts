@@ -15,7 +15,8 @@ import { AddPage } from './add.page';
     IonicModule,
     AddPageRoutingModule
   ],
-  declarations: [AddPage]
+  declarations: [AddPage],
+  entryComponents: [AddPage]
 })
 export class AddPageModule {
   
