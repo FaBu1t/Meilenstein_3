@@ -4,12 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root'
 })
 export class DataPersistServiceService {
-  tasks:any = [
-    {
-      'name':'Müll entsorgen',
-      'finished':false
-    }
-]
+  tasks:any = [];
 
 
   constructor() { 
@@ -39,6 +34,11 @@ export class DataPersistServiceService {
   finishTask(task){
     task.finished = true;
     this.persist;
+  }
+
+  removeTask(task){
+    this.tasks.splice(this.tasks.indexOf(task), 1);
+    this.persist();
   }
 
   persist(){

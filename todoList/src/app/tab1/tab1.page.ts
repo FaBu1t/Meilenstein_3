@@ -23,6 +23,7 @@ export class Tab1Page {
     });
     return await modal.present();
     console.log(this.name);
+    this.dataService.addTask(this.name);
   }
 
   getTasks(){
@@ -33,9 +34,27 @@ export class Tab1Page {
 
   finishTask(task){
     this.dataService.finishTask(task);
+    this.dataService.persist();
   }
 
-  removeTask(task){
-    this.dataService.finishTask(task);
+  async removeTask(task){
+    const alert = await this.alertController.create({
+      header: 'Wirklich löschen?',
+      message: 'Bitte bestätigen...',
+      buttons: [
+        {
+          text: 'Abbrechen',
+          role: 'cancel',
+          cssClass: 'secondary'
+        }, {
+          text: 'JA, BITTE!',
+          handler: () => {
+            this.dataService.removeTask(task);
+          }
+        }
+      ]
+    });
+
+    await alert.present();
   }
 }

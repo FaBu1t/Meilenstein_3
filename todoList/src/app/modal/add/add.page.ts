@@ -14,7 +14,13 @@ export class AddPage implements OnInit {
   constructor(private dataService:DataPersistServiceService, private modalController:ModalController) { }
 
   addTask(){
-    this.dataService.addTask(this.name);
+    if(this.name != ''){
+      this.dataService.addTask(this.name);
+    }
+    this.dismissModal();
+  }
+
+  dismissModal(){
     this.modalController.dismiss();
   }
 

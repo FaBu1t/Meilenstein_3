@@ -1,17 +1,18 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>add</ion-title>
+    <ion-title>Neue Aufgabe</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  drhzidrhj
   <ion-list>
     <ion-item>
-      <ion-label>Neue Aufgabe</ion-label>
-      <ion-input [(ngModel)]="name"></ion-input>
+      <ion-label></ion-label>
+      <ion-input [(ngModel)]="name" placeholder="Müll Entsorgen"></ion-input>
     </ion-item>
-      <ion-button color="success" (click)="addTask()">Speichern</ion-button>
-    </ion-item>
+
+    <ion-button color="success" (click)="addTask()">Speichern</ion-button>
+    <ion-button color="danger" (click)="dismissModal()">Abbrechen</ion-button>
+
   </ion-list>
 </ion-content>
